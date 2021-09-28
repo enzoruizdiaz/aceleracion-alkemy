@@ -52,12 +52,11 @@ Para el versionado del proyecto decidimos utilizar la herramienta BitBucket. Est
 
 ## Autores 
 
-* Agustín Ezequiel Falabella
-* Enzo Julian Ruiz Díaz
-* Juan Marcos Sandoval
-* Patricio Diaz
-* Pierre Crespin Huaman
-
+* [Agustín Ezequiel Falabella](https://github.com/AgustinFalabella).
+* [Enzo Julian Ruiz Díaz](https://github.com/enzoruizdiaz).
+* [Juan Marcos Sandoval](https://github.com/juanmarcossandoval).
+* [Patricio Daniel Diaz](https://github.com/patriciodanielDiaz).
+* [Jean Pierre Crespin](https://github.com/Jpierre98).
 
 
 
