@@ -1,0 +1,10 @@
+# GUIA DE INSTALACION:
+
+##Requisitos:
+* Tener instalado en tu ordenador mysql y java 11
+
+##Pasos:
+* Deberás crear una base de datos mysql llamada **SomosMas**
+  
+* Luego, en el fichero application.properties, tendrás que modificar los campos
+spring.datasource.username y spring.datasource.password por tus credenciales de mysql.
