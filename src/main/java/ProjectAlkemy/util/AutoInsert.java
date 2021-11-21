@@ -13,6 +13,7 @@ import ProjectAlkemy.model.Activity;
 import ProjectAlkemy.model.Role;
 import ProjectAlkemy.model.Testimonials;
 import ProjectAlkemy.model.User;
+import ProjectAlkemy.repository.UserRepository;
 import ProjectAlkemy.service.ActivityService;
 import ProjectAlkemy.service.RoleService;
 import ProjectAlkemy.service.TestimonialsService;
@@ -31,6 +32,9 @@ public class AutoInsert implements CommandLineRunner {
 	private ActivityService actService;
 	@Autowired
 	private TestimonialsService testimonialsService;
+	
+	@Autowired
+	private UserRepository userRepository;
 
 	private Role role;
 	private User user;
@@ -51,7 +55,7 @@ public class AutoInsert implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		
+
 		createTestimonial();
 
 		role = new Role();
@@ -94,6 +98,26 @@ public class AutoInsert implements CommandLineRunner {
 			if (actService.findByName(a.getName()) == null) {
 				actService.create(a);
 			}
+		}
+		
+		if(userRepository.count() == 0) {
+			
+			User user =  new User();
+			user.setFirstName("Juan");
+			user.setLastName("Cornejo");
+			user.setEmail("juan@gmail.com");
+			user.setPassword(passwordEncoder.encode("12131415"));
+			user.setSoftDelete(false);
+			user.setRoleId(roleService.findByName("USER"));
+			userRepository.save(user);
+			user = new User();
+			user.setFirstName("Admin2");
+			user.setLastName("Admin2");
+			user.setEmail("Admin2");
+			user.setPassword(passwordEncoder.encode("admin123"));
+			user.setSoftDelete(false);
+			user.setRoleId(roleService.findByName("ADMIN"));
+			userRepository.save(user);
 		}
 	}
 
